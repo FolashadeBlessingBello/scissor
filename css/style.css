@@ -435,7 +435,7 @@ ul {
 }
 
 .plan-period {
-  font-weight: 400;                    /* "/month" is lighter than the number */
+  font-weight: 400;                  
 }
 
 .plan-desc {
@@ -485,3 +485,84 @@ padding: 12px var(--space-4);
   color: #fff;
 }
 
+/* FAQ */
+.faq {
+  margin-bottom: 128px;
+}
+
+.faq-wrapper {
+  max-width: 760px;                    
+}
+
+.faq-title {
+  position: relative;
+  width: fit-content;                 
+  margin: 0 auto var(--space-6);       
+  font-size: var(--fs-40);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.faq-title::before {                   
+  content: "";
+  position: absolute;
+  left: -14px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--gradient);
+}
+
+/* One question and answer */
+.faq-item {
+  border-bottom: 1px solid rgba(20, 20, 20, 0.12);   
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;     
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) 0;
+  background: none;                    /* removes the default button look */
+  border: none;
+  font-family: inherit;              
+  font-size: var(--fs-18);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  color: var(--primary-300);
+}
+
+/* Plus / minus icon */
+.faq-icon {
+  flex-shrink: 0;                     
+  width: 16px;
+  height: 16px;
+  background: url("../assets/plus.svg") no-repeat center / contain;
+}
+
+.faq-item.open .faq-icon {
+  background-image: url("../assets/minus.svg");   
+}
+
+/* Answer panel */
+.faq-answer {
+  max-height: 0;                      
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer p {
+  padding-bottom: var(--space-3);
+  font-size: var(--fs-16);
+  line-height: 1.6;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;                   
+}
